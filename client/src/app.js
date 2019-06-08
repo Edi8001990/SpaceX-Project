@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
   const launches = new Launch('https://api.spacexdata.com/v2/launches')
-  // launches.bindEvents()
+  launches.bindEvents()
   launches.getData()
 })

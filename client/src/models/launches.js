@@ -10,9 +10,9 @@ const Launch = function(url) {
 Launch.prototype.bindEvents = function() {
   PubSub.subscribe('SelectView:change', (event) =>{
     selectedIndex = event.detail
-    const selectedCountry = this.launches[selectedIndex]
+    const selectedLaunch = this.launches[selectedIndex]
 
-    PubSub.publish('Launch:selected-data-ready:', selectedCountry)
+    PubSub.publish('Launch:selected-launch-ready:', selectedLaunch)
   })
 
 }
