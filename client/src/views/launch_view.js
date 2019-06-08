@@ -20,6 +20,20 @@ LaunchView.prototype.render = function(launch) {
   const launch_success = this.createElement('p',"Lauch success: " +  launch.launch_success)
   this.container.appendChild(launch_success)
 
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+  const date = launch.launch_date_utc
+  const localDate = new Date(date)
+  const lauchFormattedDate = localDate.getDate() + " " + monthNames[(localDate.getMonth() + 1)]
+  + " " + localDate.getFullYear() + " " + localDate.getHours() + ":" + localDate.getMinutes()
+  + " British timezone"
+  const launch_date = this.createElement('p', "Launch date: " + lauchFormattedDate)
+  this.container.appendChild(launch_date)
+
+  const launchImage = document.createElement('img')
+  launchImage.src = launch.links.mission_patch
+  this.container.appendChild(launchImage)
+
 }
 
 LaunchView.prototype.createElement = function(elementType, text) {
