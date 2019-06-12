@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   launchView.bindEvents()
 
 
-  const launches = new Launch('https://api.spacexdata.com/v2/launches')
+  const launches = new Launch('https://api.spacexdata.com/v3/launches')
   launches.bindEvents()
   launches.getData()
 })

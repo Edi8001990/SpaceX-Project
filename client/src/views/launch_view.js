@@ -18,11 +18,22 @@ LaunchView.prototype.render = function(launch) {
   const mission_name = this.createElement('h3',"Mission name: " + launch.mission_name);
   this.container.appendChild(mission_name)
 
-  const mission_details = this.createElement('p', "Mission Details: " + launch.details)
-  this.container.appendChild(mission_details)
+  if ((launch.details !== null)){
+  const mission_details = this.createElement('p', "Mission Details: " + launch.details);
+  this.container.appendChild(mission_details);}
+  else{
+  const mission_details = this.createElement('p', "No details about this mision from API");
+  this.container.appendChild(mission_details);
+  }
 
-  const launch_success = this.createElement('p', "Lauch success: " +  launch.launch_success)
-  this.container.appendChild(launch_success)
+
+  if ((launch.launch_success === true)){
+  const launch_success = this.createElement('p', "Lauch result: Succeed");
+  this.container.appendChild(launch_success)}
+  else{
+  const launch_success = this.createElement('p', "Lauch result: Failure");
+  this.container.appendChild(launch_success)}
+
 
 
   if (launch.launch_success === false){

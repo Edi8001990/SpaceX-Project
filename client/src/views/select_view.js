@@ -19,8 +19,10 @@ SelectView.prototype.bindEvents = function () {
 
 SelectView.prototype.populate = function(launches) {
   launches.forEach((launch, index) =>{
+      if(launch.upcoming !== true){
     const launchOption = this.createOption(launch.flight_number + ". " + launch.mission_name, index);
     this.element.appendChild(launchOption)
+  }
   })
 }
 
